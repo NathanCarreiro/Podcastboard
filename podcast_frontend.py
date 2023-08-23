@@ -20,11 +20,13 @@ def main():
         podcast_info = available_podcast_info[selected_podcast]
 
         # Right section - Newsletter content
-        st.header("What you need to know...")
+        st.header("Let's get you caught up...")
+
+        st.subheader("Podcast")
+        st.write(podcast_info['podcast_details']['podcast_title'])
 
         # Display the podcast title
-        st.subheader("Episode Title")
-        st.write(podcast_info['podcast_details']['episode_title'])
+        st.subheader("Episode Title  :  ")        st.write(podcast_info['podcast_details']['episode_title'])
 
         # Display the podcast summary and the cover image in a side-by-side layout
         col1, col2 = st.columns([7, 3])
@@ -38,11 +40,11 @@ def main():
             st.image(podcast_info['podcast_details']['episode_image'], caption="Podcast Cover", width=300, use_column_width=True)
 
         # Display the podcast guest and their details in a side-by-side layout
-        col3, col4 = st.columns([3, 7])
+        # col3, col4 = st.columns([3, 7])
 
-        with col3:
-            st.subheader("Podcast Guest")
-            st.write(podcast_info['podcast_guest'])
+        # with col3:
+        st.subheader("Who's featured in this episode?")
+        st.write(podcast_info['podcast_guest'])
 
 
         # Display the five key moments
